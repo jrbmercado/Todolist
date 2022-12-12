@@ -15,39 +15,39 @@ class TestUser(unittest.TestCase):
     # TODO: Create test cases for User creation
 
     # Tests first name reassignment
-    def test_setFirstName(self):
-        self.user1.setFirstName("Bob")
-        self.assertEqual(self.user1.firstName, "Bob",
+    def test_set_first_name(self):
+        self.user1.set_first_name("Bob")
+        self.assertEqual(self.user1.first_name, "Bob",
                          msg="First Name Reassignment to Nonempty String Failed")
-        self.assertRaises(Exception, self.user1.setFirstName, "",
+        self.assertRaises(Exception, self.user1.set_first_name, "",
                           msg="First Name Reassignment to Empty String Error Not Thrown")
-        self.assertRaises(Exception, self.user1.setFirstName, "a",
+        self.assertRaises(Exception, self.user1.set_first_name, "a",
                           msg="First Name Reassignment to Short String Error Not Thrown")
-        self.assertRaises(Exception, self.user1.setFirstName, "123",
+        self.assertRaises(Exception, self.user1.set_first_name, "123",
                           msg="First Name Reassignment to Numbers Only String Error Not Thrown")
-        self.assertRaises(Exception, self.user1.setFirstName, "a23",
+        self.assertRaises(Exception, self.user1.set_first_name, "a23",
                           msg="First Name Reassignment to Mix Numbers and Letters String Error Not Thrown")
-        self.assertRaises(Exception, self.user1.setFirstName, 5,
+        self.assertRaises(Exception, self.user1.set_first_name, 5,
                           msg="First Name Reassignment to Int Type Error Not Thrown")
-        self.assertRaises(Exception, self.user1.setFirstName, None,
+        self.assertRaises(Exception, self.user1.set_first_name, None,
                           msg="First Name Reassignment to None Type Error Not Thrown")
 
     # Tests last name reassignment
-    def test_setLastName(self):
-        self.user1.setLastName("Bob")
-        self.assertEqual(self.user1.lastName, "Bob",
+    def test_set_last_name(self):
+        self.user1.set_last_name("Bob")
+        self.assertEqual(self.user1.last_name, "Bob",
                          msg="Last Name Reassignment to Nonempty String Failed")
-        self.assertRaises(Exception, self.user1.setLastName, "",
+        self.assertRaises(Exception, self.user1.set_last_name, "",
                           msg="Last Name Reassignment to Empty String Error Not Thrown")
-        self.assertRaises(Exception, self.user1.setLastName, "a",
+        self.assertRaises(Exception, self.user1.set_last_name, "a",
                           msg="Last Name Reassignment to Short String Error Not Thrown")
-        self.assertRaises(Exception, self.user1.setLastName, "123",
+        self.assertRaises(Exception, self.user1.set_last_name, "123",
                           msg="Last Name Reassignment to Numbers Only String Error Not Thrown")
-        self.assertRaises(Exception, self.user1.setLastName, "a23",
+        self.assertRaises(Exception, self.user1.set_last_name, "a23",
                           msg="Last Name Reassignment to Mix Numbers and Letters String Error Not Thrown")
-        self.assertRaises(Exception, self.user1.setLastName, 5,
+        self.assertRaises(Exception, self.user1.set_last_name, 5,
                           msg="Last Name Reassignment to Int Type Error Not Thrown")
-        self.assertRaises(Exception, self.user1.setLastName, None,
+        self.assertRaises(Exception, self.user1.set_last_name, None,
                           msg="Last Name Reassignment to None Type Error Not Thrown")
 
 

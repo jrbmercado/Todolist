@@ -3,45 +3,45 @@ import re
 
 class User:
     # Constructor that accepts first and last name, ID and taskboard is auto filled by program
-    def __init__(self, firstName, lastName):
+    def __init__(self, first_name="First", last_name="Last"):
         # Set firstname an lastname to input values
-        self.firstName = firstName
-        self.lastName = lastName
+        self.first_name = first_name
+        self.last_name = last_name
         # TODO: Create Unique ID's for each user, for database access
         self.id = 0
         # Initialize taskboard to empty array of tasks
-        self.taskBoard = []
+        self.task_board = []
 
     # Prints object as first and last name and userID. Tasks in task board will not be displayed.
     # TODO: Create tasks in taskboard to be displayed if object is requested to be printed
     def __str__(self):
-        return f"Name: {self.firstName} {self.lastName} \n UserID: {self.id}"
+        return f"Name: {self.first_name} {self.last_name} \n UserID: {self.id}"
 
     # Checks to see if a string contains a number
-    def containsNumber(self, value):
-        numbers = re.findall('[0-9]+', value)
+    def contains_number(self, value):
+        numbers = re.findall('\d+', value)
         return True if numbers else False
 
     # Reassigns first name to a different first name
-    def setFirstName(self, newFirstName):
+    def set_first_name(self, new_first_name):
         if (
-            type(newFirstName) == str and
-            self.containsNumber(newFirstName) == False and
-            len(newFirstName) >= 2
+            type(new_first_name) == str and
+            self.contains_number(new_first_name) == False and
+            len(new_first_name) >= 2
         ):
-            self.firstName = newFirstName
+            self.first_name = new_first_name
         else:
             raise Exception(
                 "First Name must be a valid string with at least 2 characters")
 
     # Reassigns last name to a different last name
-    def setLastName(self, newLastName):
+    def set_last_name(self, new_last_name):
         if (
-            type(newLastName) == str and
-            self.containsNumber(newLastName) == False and
-            len(newLastName) >= 2
+            type(new_last_name) == str and
+            self.contains_number(new_last_name) == False and
+            len(new_last_name) >= 2
         ):
-            self.lastName = newLastName
+            self.last_name = new_last_name
         else:
             raise Exception(
                 "Last Name must be a valid string with at least 2 characters")
