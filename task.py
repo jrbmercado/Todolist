@@ -10,7 +10,8 @@ class Task:
         self.completed = completed
 
     def set_title(self, title):
-        if (title is not None):
+        if (title is not None and
+                title != ""):
             self.title = title
         else:
             raise Exception("Title cannot be empty")
