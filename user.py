@@ -25,7 +25,7 @@ class User:
     # Reassigns first name to a different first name
     def set_first_name(self, new_first_name):
         if (
-            type(new_first_name) == str and
+            isinstance(new_first_name, str) and
             self.contains_number(new_first_name) == False and
             len(new_first_name) >= 2
         ):
@@ -37,7 +37,7 @@ class User:
     # Reassigns last name to a different last name
     def set_last_name(self, new_last_name):
         if (
-            type(new_last_name) == str and
+            isinstance(new_last_name, str) and
             self.contains_number(new_last_name) == False and
             len(new_last_name) >= 2
         ):

@@ -25,7 +25,7 @@ class Task:
     def set_due_date(self, due_date):
         if (due_date is not None and
            due_date.date() > self.created_date.date() and
-           type(due_date) == datetime.datetime):
+           isinstance(due_date, datetime.datetime)):
             self.due_date = due_date
         else:
             raise Exception(
@@ -34,14 +34,14 @@ class Task:
     def set_creation_date(self, created_date):
         if (created_date is not None and
             created_date.date() < self.created_date.date() and
-           type(created_date) == datetime.datetime):
+                isinstance(created_date, datetime.datetime)):
             self.created_date = created_date
         else:
             raise Exception(
                 "Creation Date cannot be in the future and must be a valid date")
 
     def set_completed(self, completed):
-        if (type(completed) == bool):
+        if (isinstance(completed, bool)):
             self.completed = completed
         else:
             raise Exception("Completed status must be True or False")

@@ -21,8 +21,6 @@ class TestTask(unittest.TestCase):
         # Title Reassignment to Empty Type Error Not Thrown
         self.assertRaises(Exception, self.task1.set_title, None)
 
-        # TODO: Complete Test Cases for Set Title
-
 
 if __name__ == "__main__":
     unittest.main()
