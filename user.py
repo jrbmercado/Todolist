@@ -22,7 +22,7 @@ class User:
         numbers = re.findall('\d+', value)
         return True if numbers else False
 
-    # Reassigns first name to a different first name
+    # Reassigns first name to a different first name with error checking
     def set_first_name(self, new_first_name):
         if (
             isinstance(new_first_name, str) and
@@ -34,7 +34,7 @@ class User:
             raise Exception(
                 "First Name must be a valid string with at least 2 characters")
 
-    # Reassigns last name to a different last name
+    # Reassigns last name to a different last name with error checking
     def set_last_name(self, new_last_name):
         if (
             isinstance(new_last_name, str) and
