@@ -1,0 +1,24 @@
+This is a document that I will update to archive some quick notes I had to google during development in ubuntu linux using vim, python, and git.
+
+Vim Notes:
+:wq = Write changes to file then quit vim
+esc = Change to normal mode
+i = Change to insert mode
+double tap d = deletes a whole line
+
+Ubuntu Notes:
+mkdir folderName = Create a new folder
+rm fileName = Delete a file
+cd = change directory
+ls = list items in working directory
+
+Python Notes:
+python3 fileName.py = Run a python script
+python3 -m unittest = Run all unit tests in a directory as long as they have test_ as a prefix to file name
+
+Git notes:
+git status = check files within directory for any changes
+git add . = stage all modified files to be committed 
+git commit -m "sampleMessage" = commit changes to be pushed to working branch with a message
+git push = push changes to working branch (code will now be avalible on github)
+
