@@ -11,6 +11,7 @@ mkdir folderName = Create a new folder
 rm fileName = Delete a file
 cd = change directory
 ls = list items in working directory
+mv old_name.txt new_name.txt = rename file
 
 Python Notes:
 python3 fileName.py = Run a python script
@@ -21,4 +22,4 @@ git status = check files within directory for any changes
 git add . = stage all modified files to be committed 
 git commit -m "sampleMessage" = commit changes to be pushed to working branch with a message
 git push = push changes to working branch (code will now be avalible on github)
-
+git pull = update files in working directory to be up to date with master branch
