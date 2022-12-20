@@ -1,5 +1,6 @@
 from task import Task
 from user import User
+import traceback
 
 class Todo_Engine():
     def __init__(self, user_id="-1", first_name="fName", last_name="lName"):
@@ -37,8 +38,27 @@ class Todo_Engine():
 
     # TODO: Create a function that gathers user first name, last name, and user ID, then writes info to user_database.txt for future logins. Will be called by login if login is unsuccessful and user does not exist in database yet.
     def create_new_user(self):
-        print("Creating new user")
-        pass
+        newUser = User()
+        successful_fName_setup = False
+        successful_lName_setup = False
+        
+        while(not successful_fName_setup):
+            try:
+                input_fName = input("What is your first name? ")
+                newUser.set_first_name(input_fName)
+                successful_fName_setup = True
+            except Exception:
+                print("First name input is not valid")
+
+        while(not successful_lName_setup):
+            try: 
+                input_lName = input("What is your last name? ")
+                newUser.set_last_name(input_lName)
+                successful_lName_setup = True
+            except Exception:
+                print("Last name input is not valid")
+
+        print(f"Created new user account for {newUser.first_name.capitalize()} {newUser.last_name.capitalize()}")
 
 def main():
     test1 = Todo_Engine()

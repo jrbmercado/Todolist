@@ -5,6 +5,9 @@ Vim Notes:
 esc = Change to normal mode
 i = Change to insert mode
 double tap d = deletes a whole line
+e = skip to end of next word
+w = skip to beginning of next word
+u = undo
 
 Ubuntu Notes:
 mkdir folderName = Create a new folder
