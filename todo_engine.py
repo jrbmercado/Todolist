@@ -38,6 +38,7 @@ class Todo_Engine():
         if (self.found_user_info(input_login_id)):  # If successful, greet user back
             print(
                 f"Welcome back {self.current_first_name} {self.current_last_name}")
+            self.loadTasks(input_login_id)
         else:  # If unsuccessful we need to get more info and add them to the database
             # TODO: Call create_new_user() function
             print("Welcome new user! Let's create a new account.")
@@ -73,7 +74,9 @@ class Todo_Engine():
         print(
             f"Created new user account for {newUser.first_name.capitalize()} {newUser.last_name.capitalize()}")
 
-    def loadTasks(user_id):
+        self.loadTasks(newUser.id)
+
+    def loadTasks(self, user_id):
         with open("task_database.txt", "r") as opened_task_database:
             # Read the lines in the database and seperate by new line characters
             lines = opened_task_database.read().splitlines()
@@ -84,6 +87,28 @@ class Todo_Engine():
                 # Check to see if the first entry which is the owner_id, matches the user_id that is logged in
                 # If they match, add the task to the opened
                 if (lineContents[0] == user_id):
+                    newTask = Task(lineContents[1], lineContents[2])
+                    # print(f"Added new task {newTask.title} {newTask.detail}")
+                    self.tasks.append(newTask)
+            # print("Tasks loaded")
+            self.menu()
+
+    def viewTasks(self):
+        count = 0
+        for task in self.tasks:
+            count += 1
+            print(f"{count} - {task.title} \n \t{task.detail}")
+        self.menu()
+
+    def menu(self):
+        print("="*30)
+        print("0 = View all tasks")
+        inputChoice = input("Please select an option: ")
+        print("="*30)
+
+        match inputChoice:
+            case "0":
+                self.viewTasks()
 
 
 def main():
